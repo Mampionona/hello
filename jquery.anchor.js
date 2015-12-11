@@ -10,11 +10,12 @@
 
 		return this.each(function(i, element) {
 			$(element).on('click', function(e) {
+				var h = this.hash;
 				$('body, html').animate({
-					scrollTop: $(this.hash).offset().top
+					scrollTop: $(h).offset().top
 				}, param.duration, param.easing);
 
-				hash( this.hash );
+				hash( h );
 				e.preventDefault();
 			});
 		});
